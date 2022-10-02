@@ -1,0 +1,12 @@
+<form [formGroup]="myFormArticle" (ngSubmit)="onSubmit(myFormArticle)" style="padding: 60px;">
+    <div>
+        <label>
+            Article Name :
+            <input formControlName="article" placeholder="Please Enter article name">
+        </label>
+        <div *ngIf="myFormArticle.get('article').invalid && (myFormArticle.get('article').dirty || myFormArticle.get('article').touched)">
+            Please provide the user name.
+        </div>
+    </div>
+    <button type="submit" [disabled]="myFormArticle.invalid">Send</button>
+</form>

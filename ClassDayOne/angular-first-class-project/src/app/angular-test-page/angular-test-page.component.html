@@ -1,0 +1,60 @@
+<p>angular-test-page works!</p>
+<p>{{testPageContent}}</p>
+<p>{{testStringFromMethod}}</p>
+<div>
+    <label>Property Binding</label>
+    <input type="text" [value]="propertyBinding" />
+</div>
+<div (click)="eventBinding()">
+    <label>Event Binding</label>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="twoWayDataBinding" />
+    <label>Two way data binding</label>
+    <input type="text" [(ngModel)]="twoWayDataBinding" />
+   
+    <!-- <input type="text" [value]="twoWayDataBinding" /> -->
+</div>
+
+<h2>Two-way Binding Example</h2>    
+   <input [(ngModel)]="fullName" /> <br/><br/>    
+<p> {{fullName}} </p>  
+
+
+
+
+
+
+
+<h4>NgIf</h4>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age < 30"> (1)
+  {{ person.name }} ({{ person.age }})
+  </li>
+</ul>
+
+
+<h4>NgSwitch</h4>
+<ul *ngFor="let person of people"
+    [ngSwitch]="person.country">
+  <li *ngSwitchCase="'UK'"
+      class="text-success">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault
+      class="text-warning">
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+
+

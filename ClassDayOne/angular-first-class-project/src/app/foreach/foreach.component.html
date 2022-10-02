@@ -1,0 +1,39 @@
+<p>foreach works!</p>
+<!-- <div>{{cartsData.carts[0].products[1].title | json}}</div> -->
+<div>{{output}}</div>
+
+
+<div>
+    <table>
+        <tr>
+            <th>
+               Id
+            </th>
+            <th>
+                Total Products
+            </th>
+            <th>
+                Total Quantity
+            </th>
+            
+        </tr>
+        <tr *ngFor="let cart of cartsArrFilter">       
+            <td>{{cart.id}}</td>
+            <td>{{cart.totalProducts}}</td>
+            <td>{{cart.totalQuantity}}</td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <p>Find</p>
+    <p>
+        {{cartsArrFind.id}}
+    </p>
+    <p>
+        {{cartsArrFind.totalProducts}}
+    </p>
+    <p>
+        {{cartsArrFind.totalQuantity}}
+    </p>
+</div>

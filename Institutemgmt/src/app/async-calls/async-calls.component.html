@@ -1,0 +1,5 @@
+<p style="padding: 30px;">{{quotesResponse | json}}</p>
+<input type="button" value="Pass User Details to Child component" (click)="assignUserInfo()" />
+<div><app-user-information  (username)="receiveDataFromChild($event)"></app-user-information></div>
+
+<!-- [userDetails]="userObj" -->

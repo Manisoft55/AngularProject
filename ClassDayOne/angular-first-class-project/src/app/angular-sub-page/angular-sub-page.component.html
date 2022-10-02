@@ -1,0 +1,93 @@
+<p>angular-sub-page works!</p>
+<div>
+    <ul *ngFor="let emp of employee">        
+        <li *ngIf="emp.EmpAge > 30">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+    </ul>
+</div>
+<div>
+    ngSwitch
+</div>
+<div>
+    <ul *ngFor="let emp of employee" [ngSwitch]="emp.EmpNative">        
+        <li *ngSwitchCase="'Chennai'">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+        <li *ngSwitchCase="'Trichy'">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+        <li *ngSwitchCase="'Pondy'">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    Attribute Directive
+</div>
+<div>
+    <ul *ngFor="let emp of employee">        
+        <li [ngClass]="{'yellow-class':emp.EmpRating === 'B'}">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+    </ul>
+</div>
+
+
+<div>
+    Attribute Directive - ngStyle
+</div>
+<div>
+    <ul *ngFor="let emp of employee">        
+        <li [ngStyle]="{'color':emp.EmpRating === 'C' ? 'red' : 'green' }">
+            {{emp.EmpFirstName}} , Age : {{emp.EmpAge}}
+        </li>
+    </ul>
+</div>
+
+
+<div>
+    Users
+</div>
+<div>
+    <table>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email Id
+            </th>
+            <th>
+                Phone number
+            </th>
+            <th>
+                Currency
+            </th>
+            <th>
+                DateOfBirth
+            </th>
+        </tr>
+        <tr *ngFor="let user of users">            
+            <td>{{user.username | lowercase}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{currencyValue | currency:'INR'}}</td>
+            <td>{{dateOfBirth | date:'dd/MM/yyyy'}}</td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    Custom Pipe
+</div>
+<div>
+<label>{{Price}}</label>
+<label>   Offer {{Price | OfferPrice}}</label>
+<label>   Total price after applying offer {{Price | displayOfferPrice}}</label>
+</div>

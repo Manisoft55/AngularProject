@@ -1,0 +1,17 @@
+<div style="padding: 20px;">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+        <label>
+            Please enter your input :
+            <input formControlName="bodmasInput" placeholder="Please enter your input">
+        </label>
+        <div *ngIf="myForm.get('bodmasInput').invalid && (myForm.get('bodmasInput').dirty || myForm.get('bodmasInput').touched)">
+            Please enter your input.
+        </div>
+    </div>
+    <button type="submit" [disabled]="myForm.invalid">Calculate</button>
+</form>
+<div>
+    Calculated value is : {{ outputData }}
+</div>
+</div>

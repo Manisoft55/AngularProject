@@ -1,0 +1,50 @@
+<div style="padding-top: 20px; padding-left: 20px;">
+<label>Filter</label>
+<input type="text" [(ngModel)]="filterValue" />
+<input type="button" value="Filter" (click)="filterRecords()" />
+</div>
+
+<div style="padding-top: 20px; padding-left: 20px;">
+    <label>Find</label>
+    <input type="text" [(ngModel)]="findValue" />
+    <input type="button" value="Find" (click)="findRecords()"/>
+</div>
+
+<div style="padding-top: 20px; padding-left: 20px;">
+    <input type="button" value="Reset" (click)="resetRecords()"/>
+</div>
+
+<div style="padding-top: 20px; padding-left: 20px;">
+    <table>
+        <tr>
+            <th>
+               Id
+            </th>
+            <th style="padding-left: 10px;">
+                Total Products
+            </th>
+            <th>
+                Total Quantity
+            </th>
+            
+        </tr>
+        <tr *ngFor="let cart of cartsResults">       
+            <td>{{cart.id}}</td>
+            <td style="padding-left: 10px;">{{cart.totalProducts}}</td>
+            <td>{{cart.totalQuantity}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- <div>
+    <p>Find</p>
+    <p>
+        {{cartsArrFind.id}}
+    </p>
+    <p>
+        {{cartsArrFind.totalProducts}}
+    </p>
+    <p>
+        {{cartsArrFind.totalQuantity}}
+    </p>
+</div> -->

@@ -1,0 +1,12 @@
+<div style="padding-left: 20px; padding-top: 20px;">
+    <form #userForms="ngForm" (ngSubmit)="onClickSubmit(userForms.value)">
+        <label name="lblUserName">User Name</label>
+        <input type="text" name="username" placeholder="User Name" ngModel>
+        <input type="password" name="password" placeholder="Password" ngModel>
+        <br />
+        <input type="submit" value="submit" />
+    </form>
+</div>
+<!-- <div>
+    <label [(ngModel)]="outputDisplay"></label>
+</div> -->

@@ -1,0 +1,51 @@
+<div style="padding: 30px;">
+    <p> current count is {{child?.count}} </p>
+ 
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">decrement</button>
+   
+    <app-user-info-view></app-user-info-view>
+  
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div>
+            <label (click)="sendUserNameToParent(myForm)">
+                User Name :
+                <input formControlName="username" placeholder="User Name">
+            </label>
+            <div *ngIf="myForm.get('username').invalid && (myForm.get('username').dirty || myForm.get('username').touched)">
+                Please provide the user name.
+            </div>
+        </div>
+        <div>
+            <label>
+                Email:
+                <input formControlName="useremail" placeholder="Your email">
+            </label>
+            <div *ngIf="myForm.get('useremail').invalid && (myForm.get('useremail').dirty || myForm.get('useremail').touched)">
+                Please provide a valid email address.
+            </div>
+        </div>
+        <div>
+            <label>
+                Age:
+                <input type="number" formControlName="userage" placeholder="Your Age">
+            </label>
+            <div
+                *ngIf="myForm.get('userage').invalid && (myForm.get('userage').dirty || myForm.get('userage').touched)">
+                Messages must be a valid age.
+            </div>
+        </div>
+        <div>
+            <label>
+                Mobile:
+                <input type="number" formControlName="usermobile" placeholder="Your Mobile Number">
+            </label>
+            <div
+                *ngIf="myForm.get('usermobile').invalid && (myForm.get('usermobile').dirty || myForm.get('usermobile').touched)">
+                Please Enter Valid Mobile Number
+            </div>
+        </div>
+        <button type="submit" [disabled]="myForm.invalid">Send</button>
+    </form>
+</div>
+<router-outlet></router-outlet>
